@@ -31,7 +31,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "main.h"
+#include "ux_system.h"
+#include "ux_utility.h"
+#include "ux_device_stack.h"
+#include "ux_dcd_stm32.h"
+#include "ux_device_descriptors.h"
+#include "ux_device_cdc_acm.h"
+#include "app_azure_rtos_config.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -55,7 +62,7 @@ VOID USBD_CDC_ACM_Deactivate(VOID *cdc_acm_instance);
 VOID USBD_CDC_ACM_ParameterChange(VOID *cdc_acm_instance);
 
 /* USER CODE BEGIN EFP */
-
+void usbx_cdc_acm_read_write_thread_entry(ULONG arg);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
